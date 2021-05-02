@@ -38,19 +38,6 @@ app.use(
 );
 
 
-
-/*The auth0Logout: true configuration key passed to auth() middleware builder tells the middleware that, when the user logs out of the application, they should be redirected to a specific Auth0 URL to end their session there as well.
-
-In the code block above, the middleware is initialized with some information to build a proper OpenID request and send it to the authorization server. This information includes:
-
-secret: This is used to derive an encryption key for the user identity in a session cookie and to sign the transient cookies used by the login callback.
-
-Can be obtained directly from the SECRET environment variable. We are passing it directly here because this sample has a hardcoded value.
-
-baseURL: This is the publicly accessible URL for the application. The middleware uses it to construct URLs pointing back to the application.
-
-Can be obtained directly from the BASE_URL environment variable. We are passing it directly here because Vercel issues URLs that need to be discovered at runtime.
-*/
 app.use(
  auth({
    secret: SESSION_SECRET,
